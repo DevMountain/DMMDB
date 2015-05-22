@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MovieDetailViewController.h
 //  MovieSearch2
 //
 //  Created by Taylor Mott on 22 May 15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MovieDetailViewController : UIViewController
 
 @end
-
