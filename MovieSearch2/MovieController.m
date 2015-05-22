@@ -10,4 +10,15 @@
 
 @implementation MovieController
 
++ (MovieController *)sharedInstance {
+    
+    static MovieController *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [MovieController new];
+    });
+    return sharedInstance;
+    
+}
+
 @end
