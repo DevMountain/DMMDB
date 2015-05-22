@@ -10,4 +10,8 @@
 
 @interface MovieController : NSObject
 
++ (MovieController *)sharedInstance;
+
+@property (nonatomic, strong) NSArray *resultMovies;
+
 @end
