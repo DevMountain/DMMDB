@@ -16,6 +16,9 @@
 		34D454971B0F95E6003DC36C /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D454961B0F95E6003DC36C /* MovieDetailViewController.m */; };
 		34D4549A1B0F9622003DC36C /* MovieController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D454991B0F9622003DC36C /* MovieController.m */; };
 		34D4549D1B0F9639003DC36C /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D4549C1B0F9639003DC36C /* Movie.m */; };
+		34D454A41B0FA948003DC36C /* FLKAutoLayoutPredicateList.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D4549F1B0FA948003DC36C /* FLKAutoLayoutPredicateList.m */; };
+		34D454A51B0FA948003DC36C /* UIView+FLKAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D454A11B0FA948003DC36C /* UIView+FLKAutoLayout.m */; };
+		34D454A61B0FA948003DC36C /* UIView+FLKAutoLayoutPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D454A31B0FA948003DC36C /* UIView+FLKAutoLayoutPredicate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,12 @@
 		34D454991B0F9622003DC36C /* MovieController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieController.m; sourceTree = "<group>"; };
 		34D4549B1B0F9639003DC36C /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		34D4549C1B0F9639003DC36C /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		34D4549E1B0FA948003DC36C /* FLKAutoLayoutPredicateList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLKAutoLayoutPredicateList.h; sourceTree = "<group>"; };
+		34D4549F1B0FA948003DC36C /* FLKAutoLayoutPredicateList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLKAutoLayoutPredicateList.m; sourceTree = "<group>"; };
+		34D454A01B0FA948003DC36C /* UIView+FLKAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLKAutoLayout.h"; sourceTree = "<group>"; };
+		34D454A11B0FA948003DC36C /* UIView+FLKAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLKAutoLayout.m"; sourceTree = "<group>"; };
+		34D454A21B0FA948003DC36C /* UIView+FLKAutoLayoutPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLKAutoLayoutPredicate.h"; sourceTree = "<group>"; };
+		34D454A31B0FA948003DC36C /* UIView+FLKAutoLayoutPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLKAutoLayoutPredicate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +117,7 @@
 		34D4546F1B0F94AF003DC36C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				34D454A71B0FA94C003DC36C /* FLKAutoLayout */,
 				34D454701B0F94AF003DC36C /* Info.plist */,
 				34D454711B0F94AF003DC36C /* main.m */,
 			);
@@ -129,6 +139,19 @@
 				34D4548A1B0F94AF003DC36C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		34D454A71B0FA94C003DC36C /* FLKAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				34D4549E1B0FA948003DC36C /* FLKAutoLayoutPredicateList.h */,
+				34D4549F1B0FA948003DC36C /* FLKAutoLayoutPredicateList.m */,
+				34D454A01B0FA948003DC36C /* UIView+FLKAutoLayout.h */,
+				34D454A11B0FA948003DC36C /* UIView+FLKAutoLayout.m */,
+				34D454A21B0FA948003DC36C /* UIView+FLKAutoLayoutPredicate.h */,
+				34D454A31B0FA948003DC36C /* UIView+FLKAutoLayoutPredicate.m */,
+			);
+			name = FLKAutoLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +254,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				34D4549D1B0F9639003DC36C /* Movie.m in Sources */,
+				34D454A51B0FA948003DC36C /* UIView+FLKAutoLayout.m in Sources */,
+				34D454A41B0FA948003DC36C /* FLKAutoLayoutPredicateList.m in Sources */,
 				34D4549A1B0F9622003DC36C /* MovieController.m in Sources */,
+				34D454A61B0FA948003DC36C /* UIView+FLKAutoLayoutPredicate.m in Sources */,
 				34D454971B0F95E6003DC36C /* MovieDetailViewController.m in Sources */,
 				34D454781B0F94AF003DC36C /* MovieListViewController.m in Sources */,
 				34D454751B0F94AF003DC36C /* AppDelegate.m in Sources */,
@@ -418,6 +444,7 @@
 				34D454911B0F94AF003DC36C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34D454921B0F94AF003DC36C /* Build configuration list for PBXNativeTarget "MovieSearch2Tests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +453,7 @@
 				34D454941B0F94AF003DC36C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
