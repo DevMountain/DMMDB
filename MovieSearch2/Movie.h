@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 DevMountain. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface Movie : NSObject
 
