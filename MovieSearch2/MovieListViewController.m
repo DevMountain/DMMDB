@@ -10,10 +10,11 @@
 #import "UIView+FLKAutoLayout.h"
 #import "MovieListTableViewDataSource.h"
 #import "MovieController.h"
+#import "MovieDetailViewController.h"
 
 static CGFloat kMarginMovieList = 10.0;
 
-@interface MovieListViewController () <UITextFieldDelegate>
+@interface MovieListViewController () <UITextFieldDelegate, UITableViewDelegate>
 
 @property (strong, nonatomic) UITextField *searchField;
 @property (strong, nonatomic) UIButton *searchButton;
@@ -45,6 +46,7 @@ static CGFloat kMarginMovieList = 10.0;
     
     self.tableView = [UITableView new];
     self.tableView.dataSource = self.dataSource;
+    self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
     
     //Set up constraints with whatever method you feel most comfortable with
@@ -104,6 +106,32 @@ static CGFloat kMarginMovieList = 10.0;
 - (void)hideKeyboard
 {
     [self.searchField resignFirstResponder];
+}
+
+#pragma mark - UITableView Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSDictionary *selectedMovie = [MovieController sharedInstance].resultMovies[indexPath.row];
+    
+    NSNumber *selectedMovieID = selectedMovie[@"id"];
+    
+    NSString *selectedMovieIDString = [selectedMovieID stringValue];
+    
+    [[MovieController sharedInstance] getMovieWithID:selectedMovieIDString completion:^(Movie *movie) {
+        if (movie)
+        {
+            MovieDetailViewController *detailViewController = [MovieDetailViewController new];
+            detailViewController.movie = movie;
+            
+            //Updating the UI must occur on main thread
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.navigationController pushViewController:detailViewController animated:YES];
+            });
+        }
+    }];
 }
 
 @end
