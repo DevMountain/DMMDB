@@ -8,6 +8,7 @@
 
 #import "MovieListViewController.h"
 #import "UIView+FLKAutoLayout.h"
+#import "MovieListTableViewDataSource.h"
 
 static CGFloat kMarginMovieList = 10.0;
 
@@ -16,6 +17,7 @@ static CGFloat kMarginMovieList = 10.0;
 @property (strong, nonatomic) UITextField *searchField;
 @property (strong, nonatomic) UIButton *searchButton;
 @property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) MovieListTableViewDataSource *dataSource;
 
 @end
 
@@ -36,7 +38,10 @@ static CGFloat kMarginMovieList = 10.0;
     //Add Target/Action
     [self.view addSubview:self.searchButton];
     
+    self.dataSource = [MovieListTableViewDataSource new];
+    
     self.tableView = [UITableView new];
+    self.tableView.dataSource = self.dataSource;
     [self.view addSubview:self.tableView];
     
     //Set up constraints with whatever method you feel most comfortable with
