@@ -7,6 +7,7 @@
 //
 
 #import "MovieController.h"
+#import "NetworkController.h"
 
 @implementation MovieController
 
@@ -19,6 +20,40 @@
     });
     return sharedInstance;
     
+}
+
+- (void)getMoviesWithName:(NSString *)name completion:(void (^)(BOOL))completion
+{
+    NSString *path = [NetworkController baseURLString];
+    
+    path = [path stringByAppendingString:@"search/movie"];
+    
+    path = [path stringByAppendingString:[NetworkController parametersWithAPIKey:@{@"query":name}]];
+    
+    //Here path should look something like this
+    //https://api.themoviedb.org/3/search/movie?api_key=<YOUR_API_KEY>&query=fargo
+    
+    NSURL *url = [NSURL URLWithString:path];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error)
+        {
+            NSLog(@"%s - I'm an Error", __PRETTY_FUNCTION__);
+            NSLog(@"ERROR: %@", error);
+            completion(NO);
+        }
+        else
+        {
+            NSDictionary *serializedResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%s - response: %@", __PRETTY_FUNCTION__, serializedResponse);
+            self.resultMovies = serializedResponse[@"results"];
+            completion(YES);
+        }
+    }];
+    
+    [dataTask resume];
 }
 
 @end
