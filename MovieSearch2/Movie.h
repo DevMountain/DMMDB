@@ -10,4 +10,14 @@
 
 @interface Movie : NSObject
 
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *releaseDate;
+@property (strong, nonatomic) NSNumber *rating;
+@property (strong, nonatomic) NSNumber *voteCount;
+@property (strong, nonatomic) NSString *tagline;
+@property (strong, nonatomic) NSString *summary;
+@property (strong, nonatomic) NSString *imagePath;
+
+- (instancetype)initWithDictionary:(NSDictionary *)jsonDictionary;
+
 @end
