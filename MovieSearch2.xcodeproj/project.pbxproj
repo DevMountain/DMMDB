@@ -167,9 +167,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		34D4546B1B0F94AF003DC36C /* MovieSearch2 */ = {
+		34D4546B1B0F94AF003DC36C /* DMMDB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 34D4548F1B0F94AF003DC36C /* Build configuration list for PBXNativeTarget "MovieSearch2" */;
+			buildConfigurationList = 34D4548F1B0F94AF003DC36C /* Build configuration list for PBXNativeTarget "DMMDB" */;
 			buildPhases = (
 				34D454681B0F94AF003DC36C /* Sources */,
 				34D454691B0F94AF003DC36C /* Frameworks */,
@@ -179,7 +179,7 @@
 			);
 			dependencies = (
 			);
-			name = MovieSearch2;
+			name = DMMDB;
 			productName = MovieSearch2;
 			productReference = 34D4546C1B0F94AF003DC36C /* MovieSearch2.app */;
 			productType = "com.apple.product-type.application";
@@ -233,7 +233,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				34D4546B1B0F94AF003DC36C /* MovieSearch2 */,
+				34D4546B1B0F94AF003DC36C /* DMMDB */,
 				34D454841B0F94AF003DC36C /* MovieSearch2Tests */,
 			);
 		};
@@ -290,7 +290,7 @@
 /* Begin PBXTargetDependency section */
 		34D454871B0F94AF003DC36C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 34D4546B1B0F94AF003DC36C /* MovieSearch2 */;
+			target = 34D4546B1B0F94AF003DC36C /* DMMDB */;
 			targetProxy = 34D454861B0F94AF003DC36C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -449,7 +449,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		34D4548F1B0F94AF003DC36C /* Build configuration list for PBXNativeTarget "MovieSearch2" */ = {
+		34D4548F1B0F94AF003DC36C /* Build configuration list for PBXNativeTarget "DMMDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				34D454901B0F94AF003DC36C /* Debug */,

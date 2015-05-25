@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "34D4546B1B0F94AF003DC36C"
-               BuildableName = "MovieSearch2.app"
-               BlueprintName = "MovieSearch2"
+               BuildableName = "DMMDB.app"
+               BlueprintName = "DMMDB"
                ReferencedContainer = "container:MovieSearch2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "34D4546B1B0F94AF003DC36C"
-            BuildableName = "MovieSearch2.app"
-            BlueprintName = "MovieSearch2"
+            BuildableName = "DMMDB.app"
+            BlueprintName = "DMMDB"
             ReferencedContainer = "container:MovieSearch2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,8 +77,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "34D4546B1B0F94AF003DC36C"
-            BuildableName = "MovieSearch2.app"
-            BlueprintName = "MovieSearch2"
+            BuildableName = "DMMDB.app"
+            BlueprintName = "DMMDB"
             ReferencedContainer = "container:MovieSearch2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -96,8 +96,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "34D4546B1B0F94AF003DC36C"
-            BuildableName = "MovieSearch2.app"
-            BlueprintName = "MovieSearch2"
+            BuildableName = "DMMDB.app"
+            BlueprintName = "DMMDB"
             ReferencedContainer = "container:MovieSearch2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
