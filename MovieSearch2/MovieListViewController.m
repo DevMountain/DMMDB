@@ -9,10 +9,11 @@
 #import "MovieListViewController.h"
 #import "UIView+FLKAutoLayout.h"
 #import "MovieListTableViewDataSource.h"
+#import "MovieController.h"
 
 static CGFloat kMarginMovieList = 10.0;
 
-@interface MovieListViewController ()
+@interface MovieListViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) UITextField *searchField;
 @property (strong, nonatomic) UIButton *searchButton;
@@ -28,6 +29,8 @@ static CGFloat kMarginMovieList = 10.0;
     // Do any additional setup after loading the view, typically from a nib.
     
     self.searchField = [UITextField new];
+    self.searchField.delegate = self;
+    self.searchField.returnKeyType = UIReturnKeySearch;
     self.searchField.borderStyle = UITextBorderStyleRoundedRect;
     self.searchField.placeholder = @"Search Movie Name";
     [self.view addSubview:self.searchField];
@@ -35,7 +38,7 @@ static CGFloat kMarginMovieList = 10.0;
     self.searchButton = [UIButton new];
     [self.searchButton setTitle:@"Search" forState:UIControlStateNormal];
     [self.searchButton setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
-    //Add Target/Action
+    [self.searchButton addTarget:self action:@selector(searchButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.searchButton];
     
     self.dataSource = [MovieListTableViewDataSource new];
@@ -73,6 +76,34 @@ static CGFloat kMarginMovieList = 10.0;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Search Button Method
+
+- (void)searchButtonPressed
+{
+    [self hideKeyboard];
+    [[MovieController sharedInstance] getMoviesWithName:self.searchField.text completion:^(BOOL success) {
+        if (success) {
+            //Updating the UI must occur on main thread
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+        }
+    }];
+}
+
+#pragma mark - UITextField Delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self searchButtonPressed];
+    return YES;
+}
+
+- (void)hideKeyboard
+{
+    [self.searchField resignFirstResponder];
 }
 
 @end
