@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 DevMountain. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+#import "Movie.h"
 
 @interface MovieController : NSObject
 
@@ -15,5 +16,6 @@
 @property (nonatomic, strong) NSArray *resultMovies;
 
 - (void)getMoviesWithName:(NSString *)name completion:(void (^)(BOOL success))completion;
+- (void)getMovieWithID:(NSString *)movieID completion:(void (^)(Movie *movie))completion;
 
 @end

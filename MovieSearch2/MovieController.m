@@ -56,4 +56,40 @@
     [dataTask resume];
 }
 
+- (void)getMovieWithID:(NSString *)movieID completion:(void (^)(Movie *movie))completion
+{
+    NSString *path = [NetworkController baseURLString];
+    
+    path = [path stringByAppendingString:@"movie/"];
+    
+    path = [path stringByAppendingString:movieID];
+    
+    path = [path stringByAppendingString:[NetworkController apiKey]];
+    
+    //Here path should look something like this
+    //https://api.themoviedb.org/3/movie/275?api_key=<YOUR_API_KEY>
+    
+    NSURL *url = [NSURL URLWithString:path];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error)
+        {
+            NSLog(@"%s - I'm an Error", __PRETTY_FUNCTION__);
+            NSLog(@"ERROR: %@", error);
+            completion(nil);
+        }
+        else
+        {
+            NSDictionary *serializedResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%s - response: %@", __PRETTY_FUNCTION__, serializedResponse);
+            Movie *resultMovie = [[Movie alloc] initWithDictionary:serializedResponse];
+            completion(resultMovie);
+        }
+    }];
+    
+    [dataTask resume];
+}
+
 @end
