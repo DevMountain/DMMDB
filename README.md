@@ -1,3 +1,5 @@
+The API we are using today: [The Movie Database](https://www.themoviedb.org/documentation/api)
+
 1. Add views on MovieListViewController 
 2. Add NetworkController to help build url
 3. Add method to search/fetch movies
