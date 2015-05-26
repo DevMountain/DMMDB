@@ -7,5 +7,4 @@
 7. Add method to fetch detailed movie from movieID
 8. Set up MovieDetailViewController, the views in it
 9. Implement tableview delegate, didselectrow
-10. Clean up project, uses @import, devmountain brand
-11. Add Icon and changes name under icon
+10. Add Icon and changes name under icon
