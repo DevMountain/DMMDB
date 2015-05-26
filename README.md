@@ -10,4 +10,5 @@ The API we are using today: [The Movie Database](https://www.themoviedb.org/docu
 8. Set up MovieDetailViewController, the views in it
 9. Implement tableview delegate, didselectrow
 10. Add Icon and changes name under icon
+
 ♦︎ Add movie poster image to tableview cells
